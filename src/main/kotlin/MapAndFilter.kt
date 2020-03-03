@@ -1,8 +1,4 @@
-
-
 fun main() {
-
-    //<editor-fold desc="Intro">
 
     //<editor-fold desc="Map">
     //
@@ -20,11 +16,9 @@ fun main() {
     setOf("A", "B", "A")
         .map { it.toLowerCase() }
 
+    makeProducts()
 
     //</editor-fold>
-
-    //</editor-fold>
-
 
 }
 
