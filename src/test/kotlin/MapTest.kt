@@ -1,10 +1,12 @@
 import Brand.*
 import io.kotlintest.should
 import io.kotlintest.shouldBe
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
 class MapTest {
 
+    @Disabled
     @Test
     fun `should get all catalog product names`() {
         CatalogService.getProductNames() shouldBe listOf(
@@ -19,6 +21,7 @@ class MapTest {
         )
     }
 
+    @Disabled
     @Test
     fun `should get all catalog brands`() {
         CatalogService.getBrands() shouldBe setOf(Apple, Honor, Huawei, Samsung)
