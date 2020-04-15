@@ -5,7 +5,7 @@ fun <T, R> Iterable<T>.map(transform: (T) -> R): List<R> {
 }
 
 fun <T> Iterable<T>.filter(predicate: (T) -> Boolean): List<T> {
-    val result = filterTo(ArrayList<T>(), predicate)
+    val result = filterTo(ArrayList(), predicate)
     println("$this -> $result")
     return result
 }

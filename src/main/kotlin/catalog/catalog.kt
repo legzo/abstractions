@@ -1,4 +1,6 @@
-import Brand.*
+package catalog
+
+import catalog.Brand.*
 import java.time.LocalDate
 
 enum class Brand { Apple, Honor, Huawei, OPPO, Samsung, Sony, Xiaomi, }

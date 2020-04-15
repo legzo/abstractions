@@ -1,5 +1,6 @@
-import Brand.*
-import io.kotlintest.should
+package catalog
+
+import catalog.Brand.*
 import io.kotlintest.shouldBe
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test

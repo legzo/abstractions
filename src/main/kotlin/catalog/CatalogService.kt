@@ -1,21 +1,23 @@
+package catalog
+
 object CatalogService {
 
     private val catalog = Catalog.get()
 
     fun getProductNames() {
-        TODO("not implemented")
+        TODO("c'mon !")
     }
 
     fun getBrands() {
-        TODO("not implemented")
+        TODO("let's do it !")
     }
 
-    fun getProductOfBrand(samsung: Brand) {
-        TODO("not implemented")
+    fun getProductsOfBrand(samsung: Brand) {
+        TODO("here we go !")
     }
 
     fun getProductsWithDiscounts() {
-        TODO("not implemented")
+        TODO("un dos tres")
     }
 
 }
