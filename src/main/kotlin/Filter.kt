@@ -1,40 +1,66 @@
 fun main() {
 
-    println("For ... in")
-    val input = listOf(1, 2, 3)
+    val ints = listOf(1, 2, 3)
     val output = mutableListOf<Int>()
-    for (number in input) {
+    for (number in ints) {
         if (number >= 2) {
             output.add(number)
         }
     }
-    println("$input -> $output")
+    println("WIth for..in :\n $ints -> $output")
+
+    /*
+             ad88  88  88
+            d8"    ""  88    ,d
+            88         88    88
+          MM88MMM  88  88  MM88MMM  ,adPPYba,  8b,dPPYba,
+            88     88  88    88    a8P_____88  88P'   "Y8
+            88     88  88    88    8PP"""""""  88
+            88     88  88    88,   "8b,   ,aa  88
+            88     88  88    "Y888  `"Ybbd8"'  88
 
 
-    // Iterable<T>.filter(predicate: (T) -> Boolean): List<T>
 
-    // Je prends une collection de trucs et je n'en retiens que les éléments
-    // vérifiant un certain prédicat
+        Iterable<T>.filter(predicate: (T) -> Boolean): List<T>
 
-    // Le lambda est un predicat, on reste sur le même type en entrée et en sortie
+        Je prends une collection de trucs et je n'en retiens que les éléments
+        vérifiant un certain prédicat
 
-    println("Filter avec paramètre explicit")
+        Le lambda est un predicat, on reste sur le même type en entrée et en sortie
 
-    listOf(1, 2, 3)
-        .filter { number -> number >= 2 }
+     */
 
+    val bigNumbers = ints.filter { number -> number >= 2 }
 
-    println("Filter avec paramètre implicit")
-
-    listOf(1, 2, 3)
-        .filter { it >= 2 }
+    println("With explicit param :\n $ints -> $bigNumbers")
 
 
-    setOf("ABBA", "Batman", "Andrew Weatherall")
-        .filter { it.contains("all") }
+
+    val alsoBigNumbers = ints.filter { it >= 2 }
+
+    println("With implicit param :\n $ints -> $alsoBigNumbers")
 
 
-    listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-        .filter { it % 2 == 0 }
+    val names = setOf("ABBA", "Batman", "Andrew Weatherall")
+    val namesWithAllInIt = names.filter { it.contains("all") }
 
+    println("With strings :\n $names -> $namesWithAllInIt")
+
+
+    val intsToTen = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val eventIntsToTen = intsToTen.filter { it % 2 == 0 }
+
+    println("With ints :\n $intsToTen -> $eventIntsToTen")
+
+
+    println("\n👏")
+
+    /*
+
+    Exemples :
+
+    1. N'afficher que les produits appartenant à une marque donnée.
+    2. Permettre au client de sélectionner uniquement les points relais qui sont ouverts.
+
+     */
 }

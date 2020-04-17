@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Filter {
 
@@ -32,6 +33,14 @@ public class Filter {
                 .collect(Collectors.toList());
 
         System.out.println(String.format("%s -> %s", input2, output2));
+
+
+        System.out.println(
+
+                Stream.of(1, 2, 3)
+                        .filter(it -> it >= 2)
+                        .collect(Collectors.toList())
+        );
 
     }
 
