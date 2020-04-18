@@ -8,6 +8,7 @@ fun main() {
     }
 
     println("With iterator :\n $input -> $output")
+    println()
 
     /*
 
@@ -21,12 +22,13 @@ fun main() {
         88           `"Ybbd8"'   `"8bbdP"Y8   `"YbbdP'Y8   `"Ybbd8"'   `"Ybbd8"'
 
 
-        Iterable<T>.flatMap(transform: (T) -> Iterable<R>): List<R>
+        Iterable<T>.reduce(operation: (acc: T, T) -> T): T
 
-        Je prends une collection de trucs, je transforme chaque truc en une liste de machins et ensuite je mets tout à
-        plat ==> j'obtiens une liste de tous les machins
+        En vrai : <S, T : S> Iterable<T>.reduce(operation: (acc: S, T) -> S): S
+        -> l'accumulateur peut être un super type du type des items de la collection source.
 
-        Le lambda est une transformation vers une liste
+        Je prends une collection de trucs, pour chacun des trucs je vais appliquer une fonction d'accumulation (à
+        prendre au sens le plus large possible) qui va retourner 1 seul truc.
 
     */
 
@@ -36,11 +38,27 @@ fun main() {
             .reduce { acc, number -> acc + number }
 
     println("Reduce with lambda :\n $input -> $outputWithLambda")
+    println()
 
     val outputWithMethodRef = listOf(1, 2, 3, 4, 5)
         .reduce(Int::plus)
 
     println("Reduce with method reference :\n $input -> $outputWithMethodRef")
+    println()
+
+    val alicante = listOf(
+        "Une orange sur la table",
+        "Ta robe sur le tapis",
+        "Et toi dans mon lit",
+        "Doux présent du présent",
+        "Fraîcheur de la nuit",
+        "Chaleur de ma vie"
+    ).reduce { acc, ligne -> "$acc\n$ligne" }
+
+    println("Alicante de Jacques Prévert : \n$alicante")
+    println()
+    // voir aussi joinToString()
+
 
     println("\n👏")
 
@@ -48,7 +66,12 @@ fun main() {
 
     Exemples :
 
-    1.
+    1. Je peux avoir plusieurs promotions qui s'appliquent sur un produit. Pour avoir le prix de mon produit une fois
+    que toutes les promotions ont été appliquées, je peux "reduce" les montants de mes discounts.
+
+    👉 val totalDesRemises = monProduit
+                                .discounts
+                                .reduce { acc, discount -> acc + discount.amount }
 
      */
 }
